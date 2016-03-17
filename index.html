@@ -17,18 +17,38 @@
       }
     </style>
 
+
+  </head>
+  <body>
+
+    <a data-fn="moveLeft" class="btn control">send</a>
+
+    <h1>Pings- test</h1>
+    <ul id='pings'></ul>
+
+
+<script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
+<script   src="public/js/front.js"></script>
+
     <script>
       var host = location.origin.replace(/^http/, 'ws')
       var ws = new WebSocket(host);
+
       ws.onmessage = function (event) {
         var li = document.createElement('li');
         li.innerHTML = JSON.parse(event.data);
         document.querySelector('#pings').appendChild(li);
       };
+
+      $('.control').on('click',function(e){
+        e.preventDefault();
+        var fn = $(this).data('fn');
+        FS.send(ws,fn);
+        return false;
+      });
+
     </script>
-  </head>
-  <body>
-    <h1>Pings- test</h1>
-    <ul id='pings'></ul>
+
+
   </body>
 </html>
