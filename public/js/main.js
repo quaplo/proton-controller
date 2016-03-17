@@ -7,3 +7,18 @@ var ws = new WebSocket(host);
     FS.send(ws,fn);
     return false;
   });
+
+
+  var myElement = document.getElementById('movement');
+
+  // create a simple instance
+  // by default, it only adds horizontal recognizers
+  var mc = new Hammer(myElement);
+
+
+  mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+  // listen to events...
+  mc.on("panleft panright panup pandown tap press", function(ev) {
+      FS.send(ws,ev.type);
+  });
