@@ -10,12 +10,40 @@
         <meta http-equiv="cleartype" content="on">
         <link rel="stylesheet" href="public/css/normalize.css">
         <link rel="stylesheet" href="public/css/main.css">
+        <link rel="stylesheet" href="public/fonts/style.css">
+        <link rel="stylesheet" href="public/css/control.css">
         <script src="public/js/vendor/modernizr-2.7.1.min.js"></script>
     </head>
     <body>
 
-        <a data-fn="moveLeft" class="btn control">send</a>
-        <a data-fn="moveright" class="btn control">moveright</a>
+      <div class="control">
+        <div class="control-container">
+          <table>
+            <tr>
+              <td></td>
+              <td><a data-fn="moveLeft" class="btn control"><i class="icon-arrow_upward"></i></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><a data-fn="moveLeft" class="btn control"><i class="icon-arrow_back"></i></a></td>
+              <td><a data-fn="moveLeft" class="btn "><i class="icon-my_location"></i></a></td>
+              <td><a data-fn="moveLeft" class="btn control"><i class="icon-arrow_forward"></i></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a data-fn="moveLeft" class="btn control"><i class="icon-arrow_downward"></i></a></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+        <div class="control-container"></div>
+        <div class="control-container"></div>
+      </div>
+
+
+
+
+
 
 
         <script   src="public/js/front.js"></script>

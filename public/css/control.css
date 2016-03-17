@@ -1,0 +1,32 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #333 url(../img/bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+a.btn {
+  background: rgba(0, 0, 0, 0.54);
+  display: block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+a.btn,a.btn:hover {
+  color: #00E3FF;
+}
+
+a {
+  color: #fff;
+}
+
+.control {
+
+}
