@@ -1,8 +1,21 @@
 <html>
   <head>
+    <style>
+      #control {
+        height: 300px;
+        width: 500px;
+      }
 
+      .left {
+        float: left;
+      }
+    </style>
   </head>
   <body>
+
+<div class="left">
+  <iframe id="control" src="http://localhost:5000/c" ></iframe>
+</div>
 
     <h1>Pings- test</h1>
     <ul id='pings'></ul>
@@ -17,6 +30,7 @@
       ws.onmessage = function (event) {
         var li = document.createElement('li');
         li.innerHTML = JSON.parse(event.data);
+        console.log(event.data);
         document.querySelector('#pings').appendChild(li);
       };
 

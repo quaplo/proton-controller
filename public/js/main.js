@@ -19,6 +19,43 @@ var ws = new WebSocket(host);
   mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 
   // listen to events...
+
+var tmp = 0;
+var counter = 0;
   mc.on("panleft panright panup pandown tap press", function(ev) {
-      FS.send(ws,ev.type);
+      // FS.send(ws,ev.direction);
+
+      if(ev.direction !== tmp){
+        // IOiu.onControlUpdate(ev.direction);
+          // console.error(ev.direction,ev.angle,counter);
+          // console.log(ev.direction,ev,counter);
+
+          switch (ev.direction) {
+            case 2:
+              console.info('left');
+              break;
+            case 4:
+              console.info('right');
+              break;
+            case 8:
+              console.info('top');
+              break;
+            case 16:
+              console.info('bottom');
+              break;
+
+          }
+
+          ++counter;
+
+          if(ev.isFinal){
+            console.info('final');
+          }
+
+          if(ev.isFirst){
+            console.info('first');
+          }
+
+      }
+
   });
