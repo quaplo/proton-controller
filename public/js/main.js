@@ -8,6 +8,14 @@ var ws = new WebSocket(host);
     return false;
   });
 
+  ws.onmessage = function (event) {
+    var li = document.createElement('li');
+    li.innerHTML = JSON.parse(event.data);
+    // document.querySelector('#pings').appendChild(li);
+
+    $('#pings').html(li);
+  };
+
 
   var myElement = document.getElementById('movement');
 
