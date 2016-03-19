@@ -32,6 +32,7 @@ background: linear-gradient(to left, #C04848 , #480048); /* W3C, IE 10+/ Edge, F
 
 .control {
   height: 100%;
+  /*display: none;*/
 }
 
 .direcion {
