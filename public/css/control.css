@@ -20,12 +20,12 @@ background: linear-gradient(to left, #C04848 , #480048); /* W3C, IE 10+/ Edge, F
 }
 
 #movement {
-  height: 80%;
-  width: 40%;
+  height: 100%;
+  width: 240px;
   background: rgba(0, 0, 0, 0.42);
 
   position: fixed;
-  top:10%;
+  top:0;
 
   right: 0;
 }
@@ -40,7 +40,7 @@ background: linear-gradient(to left, #C04848 , #480048); /* W3C, IE 10+/ Edge, F
 }
 
 a.btn {
-  background: rgba(0, 0, 0, 0.54);
+  /*background: rgba(0, 0, 0, 0.54);*/
   display: block;
   height: 70px;
   width: 70px;
@@ -49,11 +49,11 @@ a.btn {
 }
 
 a.btn i {
-  font-size: 24px;
+  font-size: 34px;
 }
 
 a.btn,a.btn:hover {
-  color: #00E3FF;
+  color: #fff;
 }
 
 a {
