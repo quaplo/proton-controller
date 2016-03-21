@@ -9,10 +9,18 @@
     "express": "^4.4.5",
     "ws": "0.4.x"
   },
+  "scripts": {
+    "start": "index.js"
+  },
   "engines": {
     "node": "0.10.x"
   },
   "scripts": {
     "start": "node index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.1"
   }
+
+  
 }

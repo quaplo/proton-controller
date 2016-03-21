@@ -6,6 +6,15 @@ var port = process.env.PORT || 5000
 
 app.use(express.static(__dirname + "/"))
 
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/c', function(req, res){
+  res.sendFile(__dirname + '/input.html');
+});
+
+
 var server = http.createServer(app)
 server.listen(port)
 
@@ -15,14 +24,16 @@ var wss = new WebSocketServer({server: server})
 console.log("websocket server created")
 
 wss.on("connection", function(ws) {
-  var id = setInterval(function() {
-    ws.send(JSON.stringify(new Date()), function() {  })
-  }, 1000)
 
-  console.log("websocket connection open")
+  ws.on('message', function(data, flags) {
+    wss.clients.forEach(function each(client) {
+      client.send(data);
+    });
+
+  });
+
 
   ws.on("close", function() {
     console.log("websocket connection close")
-    clearInterval(id)
   })
 })

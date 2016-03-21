@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  background-position: center;
+  background-size: cover;
+}
+
+body {
+
+
+background: #C04848; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #C04848 , #480048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#movement {
+  height: 80%;
+  width: 40%;
+  background: rgba(0, 0, 0, 0.42);
+
+  position: fixed;
+  top:10%;
+
+  right: 0;
+}
+
+.control {
+  height: 100%;
+  /*display: none;*/
+}
+
+.direcion {
+  margin: 0 20px;
+}
+
+a.btn {
+  background: rgba(0, 0, 0, 0.54);
+  display: block;
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  text-align: center;
+}
+
+a.btn i {
+  font-size: 24px;
+}
+
+a.btn,a.btn:hover {
+  color: #00E3FF;
+}
+
+a {
+  color: #fff;
+}
+
+.control {
+
+}
