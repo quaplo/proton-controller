@@ -1,0 +1,27 @@
+.orientattion {
+    background: #000;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    font-size: 5em;
+    padding-top: 18%;
+}
+
+
+
+@media screen and (orientation:portrait) {
+   /* Portrait styles here */
+   .orientattion {
+       /*display: none;   */
+   }
+}
+/* Landscape */
+@media screen and (orientation:landscape) {
+   /* Landscape styles here */
+   .orientattion {
+       display: none;   
+   }   
+}
