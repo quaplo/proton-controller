@@ -1,13 +1,6 @@
 var host = location.origin.replace(/^http/, 'ws')
 var ws = new WebSocket(host);
 
-  $('.control').on('click',function(e){
-    e.preventDefault();
-    var fn = $(this).data('fn');
-    FS.send(ws,fn);
-    return false;
-  });
-
   ws.onmessage = function (event) {
     var li = document.createElement('li');
     li.innerHTML = JSON.parse(event.data);
@@ -30,3 +23,16 @@ var ws = new WebSocket(host);
   mc.on("panleft panright panup pandown tap press", function(ev) {
       FS.send(ws,ev.type);
   });
+
+
+function launchIntoFullscreen(element) {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if(element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
