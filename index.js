@@ -8,6 +8,7 @@ server.get(/^\/([a-zA-Z0-9_\.~-]+)\/(.*)/, function(req, res, next) {
   console.log(req.params[3]);
   res.send(200,req.params[0]);
   return next();
+  
 });
 
 server.listen(8080, function() {
