@@ -1,16 +1,21 @@
 var restify = require('restify');
+var swagger = require('swagger-restify');
 
 var server = restify.createServer();
 
-server.get(/^\/([a-zA-Z0-9_\.~-]+)\/(.*)/, function(req, res, next) {
-  console.log(req.params[0]);
-  console.log(req.params[1]);
-  console.log(req.params[3]);
-  res.send(200,req.params[0]);
-  return next();
-  
-});
+ swagger.init(server, {
+    apiVersion: '1.0',
+    swaggerVersion: '1.0',
+    swaggerURL: '/swagger',
+    swaggerJSON: '/api-docs.json',
+    swaggerUI: './public',
+    basePath: 'http://localhost:8080',
+    info: {
+      title: 'swagger-restify sample app',
+      description: 'Swagger + Restify = {swagger-restify}'
+    },
+    apis: ['./api.js', './api.yml'],
+    middleware: function(req, res){}
+  });
 
-server.listen(8080, function() {
-  console.log('%s listening at %s', server.name, server.url);
-});
+server.listen(8080);
