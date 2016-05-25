@@ -6,7 +6,8 @@
     "url": "https://github.com/heroku-examples/node-ws-test.git"
   },
   "dependencies": {
-    "restify": "^4.1.0"
+    "restify": "^4.1.0",
+    "swagger": "^0.7.5"
   },
   "scripts": {
     "start": "node index.js"

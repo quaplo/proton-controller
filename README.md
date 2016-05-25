@@ -1,4 +1,4 @@
-# Node.js Websocket Test
+# Node.js Restify Test
 
 A tiny demo using the [einaros/ws](http://einaros.github.io/ws/) WebSockets implementation.
 
